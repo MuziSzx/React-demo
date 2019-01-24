@@ -4,3 +4,30 @@
 
 git 提交时出现各种问题时
 https://blog.csdn.net/s164828378/article/details/52425208
+
+
+
+webpack 最基本使用步骤：
+    新建文件夹React-demo
+    打开终端：
+        1.npm init -y  快速初始化项目
+        2.在项目根目录新建 src ：存放项目源代码  dist：项目做好后，发布产品的目录
+        3.在src下新建index.html
+        4.新建main.js 表示入口文件
+        5.安装webpack  npm i webpack -D
+        6.4.x需要装上webpack-cli   npm i webpack-cli -D  (4.x后webpack把打包和命令行分开了，这个命令不再由webpack来提供，而是又webpack-cli来提供)
+        7.新建webpack.config.js文件（需要向外暴露一个配置对象：module.export={}  对象里可以添加输入，输出等等  ）
+            注意:在webpack 4.x 中，有一个很大的问题，就是约定大于配置，  
+            约定：
+                默认的打包入口路径是 src -->index.js
+                打包的输出文件是： dist/main.js 
+                4.x中新增了mode选项(为必填项)： develop/production
+        8.配置实时打包编译  安装webpack-dev-server npm i webpack-dev-server -D
+        9.打开package.json  配置"scripts": {
+                                            "test": "echo \"Error: no test specified\" && exit 1",
+                                            "dev":"webpack-dev-server"
+                                            },
+                                            webpack-dev-server 后可跟参数 --open 自动打开浏览器 --port 3000 改变端口号  --hot --host 127.0.0.1 修改域名
+        10. 运行npm run dev 
+        11.输出的maim.js 托管于根路径  webpack-dev-server 打包好的main.js是托管到内存中，所以根目录中看不到
+        12.dev-server就是帮我们实时编译打包
