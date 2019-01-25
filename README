@@ -31,3 +31,14 @@ webpack 最基本使用步骤：
         10. 运行npm run dev 
         11.输出的maim.js 托管于根路径  webpack-dev-server 打包好的main.js是托管到内存中，所以根目录中看不到
         12.dev-server就是帮我们实时编译打包
+        13.自动将index.html文件放入内存中
+            首先npm i html-webpack-plugin -D
+            其次在webpack-config.js里引入
+            const path = require('path');
+            const HtmlWebPackPlugin = require("html-webpack-plugin");  //导入 在内存中自动生成index页面插件
+            //创建一个插件的实例对象
+            const htmlPlugin = new HtmlWebPackPlugin({
+                template: path.join(__dirname,"./src/index.html"),//源文件
+                filename: 'index.html'  //生成的内存中首页的名称
+            })
+            最后在暴露的对象内加入此插件
