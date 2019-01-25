@@ -13,7 +13,7 @@ import ReactDOM from 'react-dom'   //把创建好的，组件和虚拟DOM 放到
 // const myH1 = React.createElement('h1',null,'这是一个大大的h1')
 const myH1 = React.createElement('h1',{id:'myh2',title:'这是一个大大的h1'},'这是一个大大的h1')
 
-
+// 渲染页面上的DOM结构，最好的方式，就是写HTML代码
 
 
 // 3.使用ReactDOM把虚拟DOM，渲染到页面上
