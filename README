@@ -42,3 +42,10 @@ webpack 最基本使用步骤：
                 filename: 'index.html'  //生成的内存中首页的名称
             })
             最后在暴露的对象内加入此插件
+
+
+
+在项目中使用react
+    1.运行npm i react react-dom -s 安装包
+        react:专门用于创建组件和虚拟DOM的，同时组件的生命周期都在这个包当中
+        react-dom:专门进行DOM操作的，最主要的应用场景，就是ReactDOM.render()
